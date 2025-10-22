@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Sentinela Sonora</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1><i class="fa-solid fa-tree"></i> Sentinela Sonora</h1>
+        <p class="subtitle">Dashboard de Monitoramento de Alertas</p>
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="map-container">
+            <div id="map"></div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3><i class="fa-solid fa-signal"></i> Status do Sistema</h3>
+                <div class="status-container">
+                    <div id="live-indicator"></div>
+                    <p id="status">Conectando...</p>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h3><i class="fa-solid fa-chart-simple"></i> Estatísticas</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Alertas Ativos</h4>
+                        <p id="active-alerts-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Última Latitude</h4>
+                        <p><span id="latest-lat-value">--</span></p>
+                    </div>
+                     <div class="stat-card">
+                        <h4>Última Longitude</h4>
+                        <p><span id="latest-lon-value">--</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-block alert-log">
+                <h3><i class="fa-solid fa-list-ul"></i> Log de Alertas</h3>
+                <ul id="alert-list">
+                    <li class="empty-log">Nenhum alerta recente.</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNEksIuk4UlhPOPPHB5eOFby5Zqbp-BDw&callback=initMap"></script>
+</body>
+</html>
